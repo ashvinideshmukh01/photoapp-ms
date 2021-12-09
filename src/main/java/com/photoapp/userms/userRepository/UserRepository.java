@@ -1,0 +1,16 @@
+package com.photoapp.userms.userRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import com.photoapp.userms.data.UserEntity;
+@EnableJpaRepositories
+@Repository
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
+	UserEntity findByEmail(String username);
+
+	UserEntity findByUserId(String userId);
+
+}
